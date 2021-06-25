@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid } from "semantic-ui-react";
-import UserResumeList from "../components/UserResumeList/UserResumeList";
+import UserResumeList from "../../components/UserResumeList/UserResumeList";
 export default function Profile() {
   return (
     <div>

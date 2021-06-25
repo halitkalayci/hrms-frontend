@@ -7,4 +7,11 @@ export default class EmployeeService{
               }
         });
     }
+    login(data){
+        return axios.post("http://www.localhost:8080/api/employees/login",data,{
+            headers: {
+                'Content-Type': 'application/json',
+              }
+        });
+    }
 }

@@ -11,7 +11,7 @@ export default function UserResumeList() {
         });
     }, [])
     return (
-        <div>
+        <div className="mt-4">
          <Table celled selectable>
         <Table.Header>
           <Table.Row>

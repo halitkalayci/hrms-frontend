@@ -1,12 +1,12 @@
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik,Form, Field, ErrorMessage } from "formik";
 import React from "react";
 import * as Yup from "yup";
-import { FormField, Button, Label } from "semantic-ui-react";
+import { FormField, Button, Label, Grid, Header, Image, Message, Segment } from "semantic-ui-react";
 import HrmsTextInput from "../../utilities/customFormControls/HrmsTextInput";
 import "./Register.css";
 import EmployeeService from "../../services/employeeService";
 import { toast } from "react-toastify";
-import { useHistory } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 export default function Register() {
   const initialValues = {
     dateOfBirth: new Date(),
@@ -53,13 +53,17 @@ export default function Register() {
   };
 
   return (
-    <div className="register-container">
-      <h2>Kayıt Ol</h2>
-      <h5>
-        İş Arayan kimliği ile kayıt olmak için aşşağıdaki bilgileri eksiksiz
-        doldurun.
-      </h5>
-      <Formik
+    <div>
+      <Grid
+        textAlign="center"
+        style={{ height: "100vh" }}
+        verticalAlign="middle"
+      >
+        <Grid.Column className="general-grid" style={{ maxWidth: 450 }}>
+          <Header as="h2" color="teal" textAlign="center">
+          `İş Arayan` Olarak Kayıt Ol
+          </Header>
+          <Formik
         initialValues={initialValues}
         validationSchema={schema}
         onSubmit={(values) => {
@@ -105,11 +109,16 @@ export default function Register() {
             placeholder="Şifrenizi onaylayın"
             label="Şifrenizi onaylayın"
           ></HrmsTextInput>
-          <Button color="green" type="submit">
+          <Button className="w-100" color="green" type="submit">
             Kayıt Ol
           </Button>
         </Form>
       </Formik>
-    </div>
+          <Message>
+            Hesabın var mı? <NavLink to="/login">Giriş Yap</NavLink>
+          </Message>
+        </Grid.Column>
+      </Grid>
+     </div>
   );
 }
