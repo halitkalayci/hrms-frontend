@@ -1,7 +1,7 @@
-import { Formik,Form, Field, ErrorMessage } from "formik";
+import { Formik,Form } from "formik";
 import React from "react";
 import * as Yup from "yup";
-import { FormField, Button, Label, Grid, Header, Image, Message, Segment } from "semantic-ui-react";
+import { Button, Grid, Header, Message } from "semantic-ui-react";
 import HrmsTextInput from "../../utilities/customFormControls/HrmsTextInput";
 import "./Register.css";
 import EmployeeService from "../../services/employeeService";

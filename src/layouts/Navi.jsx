@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { Button, Container, Menu, Divider } from "semantic-ui-react";
+import { Button, Container, Menu } from "semantic-ui-react";
 import "../App.css";
 import ProfileSummary from "./ProfileSummary";
 export default function Navi() {
@@ -11,7 +11,7 @@ export default function Navi() {
       <Menu fixed="top" inverted size="large">
         <Container>
           <Menu.Item>
-            <img src="https://icon-library.net/images/human-resources-icon-png/human-resources-icon-png-1.jpg" />
+            <img alt="logo" src="https://icon-library.net/images/human-resources-icon-png/human-resources-icon-png-1.jpg" />
           </Menu.Item>
           <Menu.Item as={NavLink} to={`/homepage`} name="Ana Sayfa" />
           <Menu.Item as={NavLink} to={`/userresumes`} name="Cvlerim" />

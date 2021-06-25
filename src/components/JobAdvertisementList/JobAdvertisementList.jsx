@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Table } from "semantic-ui-react";
 import JobAdvertisementService from "../../services/jobAdvertisementService";
+import { format } from "date-fns";
+
 export default function JobAdvertisementList() {
   const [jobAds, setJobAds] = useState([]);
 
   useEffect(() => {
-      let jobAdsService = new JobAdvertisementService();
-      jobAdsService.getJobAds().then(success => setJobAds(success.data.data));
-  },[]);
-  
+    let jobAdsService = new JobAdvertisementService();
+    jobAdsService.getJobAds().then((success) => setJobAds(success.data.data));
+  }, []);
+
   return (
     <div>
       <Table celled selectable>
@@ -23,13 +25,13 @@ export default function JobAdvertisementList() {
         </Table.Header>
 
         <Table.Body>
-          {jobAds.map((jobAd) => 
-           ( <Table.Row key={jobAd.id}>
+          {jobAds.map((jobAd) => (
+            <Table.Row key={jobAd.id}>
               <Table.Cell>{jobAd.jobDescription}</Table.Cell>
               <Table.Cell>{jobAd.minSalary}</Table.Cell>
               <Table.Cell>{jobAd.maxSalary}</Table.Cell>
               <Table.Cell>{jobAd.openPositionCount}</Table.Cell>
-              <Table.Cell>{jobAd.lastApplyDate}</Table.Cell>
+              <Table.Cell>{format(new Date(jobAd.lastApplyDate.replace("T", " ")),"dd.MM.yyyy HH:mm")}</Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>

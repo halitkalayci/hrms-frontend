@@ -5,15 +5,13 @@ import {
   Button,
   Grid,
   Header,
-  Image,
   Message,
-  Segment,
 } from "semantic-ui-react";
 import HrmsTextInput from "../../utilities/customFormControls/HrmsTextInput";
 import "./Login.css";
-import { useHistory,NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import {signIn} from '../../store/actions/authActions';
+import {loginAsync} from '../../store/actions/authActions';
 export default function Login() {
   const dispatch = useDispatch();
   const initialValues = {
@@ -26,10 +24,10 @@ export default function Login() {
     password: Yup.string().required("Şifre zorunludur")
   });
 
-  const history = useHistory();
 
   const handleSubmit = (values) => {
-    dispatch(signIn(values))
+    dispatch(loginAsync(values));
+    //dispatch(signIn(values))
   };
 
   return (
