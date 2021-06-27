@@ -1,32 +1,32 @@
-import React, { useEffect, useState } from 'react'
-import { Table } from 'semantic-ui-react';
-import ResumeService from '../../services/resumeService';
-
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import ResumeService from "../../services/resumeService";
+import { getAllByUserIdAsync } from "../../store/actions/cvActions";
+import CvCard from "../CvCard/CvCard";
+import { Grid, Header, Button, Icon } from "semantic-ui-react";
 export default function UserResumeList() {
-    const [resumes,setResumes]  = useState([]);
-    useEffect(() => {
-        let resumeService = new ResumeService();
-        resumeService.getAll().then((success)=>{
-            setResumes(success.data.data);
-        });
-    }, [])
-    return (
-        <div className="mt-4">
-         <Table celled selectable>
-        <Table.Header>
-          <Table.Row>
-            <Table.HeaderCell>CV Ön Yazısı</Table.HeaderCell>
-          </Table.Row>
-        </Table.Header>
-
-        <Table.Body>
-          {resumes.map((resume) => 
-           ( <Table.Row key={resume.id}>
-              <Table.Cell>{resume.coverLetter}</Table.Cell>
-            </Table.Row>
-          ))}
-        </Table.Body>
-      </Table>
-        </div>
-    )
+  const resumes = useSelector((state) => state.resumes);
+  const { authState } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+  const userId = authState.user ? authState.user.userId : 1;
+  dispatch(getAllByUserIdAsync(userId));
+  return (
+    <div className="mt-10">
+      <Grid>
+        <Grid.Column width={16}>
+          <Header as="h1" className="text-center">
+            Oluşturduğunuz CV'ler
+          </Header>
+        </Grid.Column>
+      </Grid>
+      {resumes.err ?? <div>{resumes.err}</div>}
+      {resumes.loading ? (
+        <div>Loading</div>
+      ) : resumes.err ? (
+        <div>{resumes.err}</div>
+      ) : resumes.data ? (
+        resumes.data.map((resume) => <CvCard resume={resume}></CvCard>)
+      ) : null}
+    </div>
+  );
 }

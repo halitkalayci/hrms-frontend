@@ -5,16 +5,7 @@ import JobAdvertisementList from "../../components/JobAdvertisementList/JobAdver
 export default function Homepage({ mobile }) {
   return (
     <div className="mt-4">
-      <Grid celled="internally">
-        <Grid.Row>
-          <Grid.Column width="4">
-            <JobPositionList></JobPositionList>
-          </Grid.Column>
-          <Grid.Column width="12">
             <JobAdvertisementList></JobAdvertisementList>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
     </div>
   );
 }

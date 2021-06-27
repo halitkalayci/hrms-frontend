@@ -18,7 +18,7 @@ export function signOut() {
 }
 
 export function loginAsync(user) {
-  return async function (dispatch, getState) {
+  return async function (dispatch) {
     let employeeService = new EmployeeService();
     await employeeService
       .login(user)

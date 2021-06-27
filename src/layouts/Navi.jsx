@@ -8,13 +8,14 @@ export default function Navi() {
   const { authState } = useSelector((state) => state.auth);
   return (
     <div>
-      <Menu fixed="top" inverted size="large">
-        <Container>
+      <Menu fixed="top"  size="large">
           <Menu.Item>
             <img alt="logo" src="https://icon-library.net/images/human-resources-icon-png/human-resources-icon-png-1.jpg" />
           </Menu.Item>
           <Menu.Item as={NavLink} to={`/homepage`} name="Ana Sayfa" />
-          <Menu.Item as={NavLink} to={`/userresumes`} name="Cvlerim" />
+          <Menu.Item as={NavLink} to={`/blabla`} name="İş İlanları" />
+          <Menu.Item as={NavLink} to={`/blablabla`} name="Akış" />
+
           {authState.authenticated ? (
             <Menu.Menu position="right">
               <ProfileSummary firstName={authState.user.firstName} lastName={authState.user.lastName}></ProfileSummary>
@@ -42,7 +43,6 @@ export default function Navi() {
               </Menu.Item>
             </Menu.Menu>
           )}
-        </Container>
       </Menu>
     </div>
   );

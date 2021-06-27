@@ -1,9 +1,15 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 .App {
+  font-family: 'Roboto', sans-serif !important;
   text-align: center;
   background:rgb(247,247,247);
 }
 body{
   background:rgb(247,247,247) !important;
+}
+.ui {
+  font-family: 'Roboto' !important;
 }
 
 .mt-4{
@@ -22,6 +28,15 @@ body{
 .text-left{
   text-align: left !important;
 }
+.text-center{
+  text-align: center !important;
+}
 .w-100{
   width:100%;
+}
+.mt-5{
+  margin-top:5em;
+}
+.mt-10{
+  margin-top:10em;
 }
