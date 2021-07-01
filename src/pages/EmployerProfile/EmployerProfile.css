@@ -1,0 +1,37 @@
+.profile-card{
+    height:80vh;
+    width:100% !important;
+}
+.custom-list-item-profile{
+    cursor:pointer;
+    width:50%;
+    margin:auto;
+    margin-bottom: 15px !important;
+    padding:15px 5px 15px 5px !important;
+    border-radius: 5px;
+}
+.custom-list-item-profile.active{
+    background:#8B9AEA !important;
+    color:white;
+}
+.profile-custom-img{
+    width:125px !important;
+    height: 125px !important;
+    margin:auto !important;
+}
+.profile-custom-btn{
+    display:block !important;
+    margin:auto !important;
+    margin-top:15px !important;
+    background:#242E58 !important; 
+    color:white !important;
+}
+.w-50{
+    width: 50% !important;
+}
+.text-right{
+    text-align: right !important;
+}
+.ml-auto{
+    margin-left: auto !important;
+}

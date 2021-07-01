@@ -1,0 +1,1 @@
+export const favorites={data:[],loading:false,message:null};

@@ -10,13 +10,13 @@ export default function alertReducer(state=initialState,{type,payload}){
      switch(type){
          case INFO:
              toast.info(payload);
-             return;
+             return state;
          case ERROR:
              toast.error(payload);
-             break;
+             return state;
          case SUCCESS:
             toast.success(payload);
-             break;
+             return state;
          default:
              return state;
      }

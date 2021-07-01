@@ -11,7 +11,7 @@ import HrmsTextInput from "../../utilities/customFormControls/HrmsTextInput";
 import "./Login.css";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import {loginAsync} from '../../store/actions/authActions';
+import {employeeLoginAsync} from '../../store/actions/authActions';
 export default function Login() {
   const dispatch = useDispatch();
   const initialValues = {
@@ -26,8 +26,7 @@ export default function Login() {
 
 
   const handleSubmit = (values) => {
-    dispatch(loginAsync(values));
-    //dispatch(signIn(values))
+    dispatch(employeeLoginAsync(values));
   };
 
   return (

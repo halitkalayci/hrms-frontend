@@ -1,12 +1,15 @@
 import React from "react";
 import UserResumeList from '../../components/UserResumeList/UserResumeList'
 
-import Navi from '../../layouts/Navi';
+import Navi from "../../layouts/Navi/Navi";
 import { Container } from 'semantic-ui-react';
 import { Route} from 'react-router-dom'
 import Register from "../Register/Register";
 import Homepage from "../Homepage/Homepage";
 import Login from '../Login/Login';
+import EmployerLogin from "../EmployerLogin/EmployerLogin";
+import EmployerProfile from "../EmployerProfile/EmployerProfile";
+import Favorites from "../Favorites/Favorites";
 
 
 export default function Dashboard() {
@@ -19,7 +22,10 @@ export default function Dashboard() {
       <Route exact path="/userresumes" component={UserResumeList}/>
       <Route exact path="/register" component={Register} />
       <Route exact path="/login" component={Login} />
-      </Container>
+      <Route exact path="/loginemployer" component={EmployerLogin} />
+      <Route exact path="/employerprofile" component={EmployerProfile} />
+      <Route exact path="/favorites" component={Favorites} />
+      </Container>  
     </div>
   );
 }
