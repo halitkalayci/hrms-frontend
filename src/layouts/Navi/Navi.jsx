@@ -5,6 +5,8 @@ import { Button, Dropdown, DropdownDivider, Menu } from "semantic-ui-react";
 import EmployerSummary from "../EmployerSummary/EmployerSummary";
 import ProfileSummary from "../ProfileSummary";
 import "./Navi.css";
+import logo from '../../assets/images/logo.png';
+
 export default function Navi() {
   const { authState } = useSelector((state) => state.auth);
   return (
@@ -13,12 +15,12 @@ export default function Navi() {
         <Menu.Item>
           <img
             alt="logo"
-            src="https://icon-library.net/images/human-resources-icon-png/human-resources-icon-png-1.jpg"
+            src={logo}
           />
         </Menu.Item>
         <Menu.Item as={NavLink} to={`/homepage`} name="Ana Sayfa" />
         <Menu.Item as={NavLink} to={`/favorites`} name="Favoriler" />
-        <Menu.Item as={NavLink} to={`/blabla`} name="İş İlanları" />
+        <Menu.Item as={NavLink} to={`/jobAdvertisements`} name="İş İlanları" />
         <Menu.Item as={NavLink} to={`/blablabla`} name="Akış" />
 
         {authState.authenticated? 

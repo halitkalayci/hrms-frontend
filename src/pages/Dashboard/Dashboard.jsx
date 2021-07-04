@@ -10,6 +10,7 @@ import Login from '../Login/Login';
 import EmployerLogin from "../EmployerLogin/EmployerLogin";
 import EmployerProfile from "../EmployerProfile/EmployerProfile";
 import Favorites from "../Favorites/Favorites";
+import JobAdvertisements from "../JobAdvertisements/JobAdvertisements";
 
 
 export default function Dashboard() {
@@ -25,6 +26,8 @@ export default function Dashboard() {
       <Route exact path="/loginemployer" component={EmployerLogin} />
       <Route exact path="/employerprofile" component={EmployerProfile} />
       <Route exact path="/favorites" component={Favorites} />
+      <Route exact path="/jobAdvertisements" component={JobAdvertisements} />
+
       </Container>  
     </div>
   );
